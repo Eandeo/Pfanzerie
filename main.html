@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="card">
+    <div class="card" id="test">
 
         <img src="plants/einblatt.jpg" alt="friedenslilie" class="cardpics">
         <figcaption>Friedenslilie</figcaption>
@@ -16,20 +16,25 @@
             <summary>Zusammenfassung</summary>
             <ul class="cc-selector">
                 <li>Wasser:
-                    <input type="radio" id="water-amount-1" name="waterAmount" aria-label="sehr wenig Wasser" value="1">
-                    <label for="water-amount-1" class="drinkcard-cc water-amount-1"></label>
-                   
-                    <input type="radio" id="water-amount-2" name="waterAmount" aria-label="wenig Wasser" value="2">
-                    <label for="water-amount-2" class="drinkcard-cc water-amount-2"></label>
-                   
-                    <input type="radio" id="water-amount-3" name="waterAmount" aria-label="mittel viel Wasser" value="3">
-                    <label for="water-amount-3" class="drinkcard-cc water-amount-3"></label>
-                   
-                    <input type="radio" id="water-amount-4" name="waterAmount" aria-label="viel Wasser" value="4">
-                    <label for="water-amount-4" class="drinkcard-cc water-amount-4"></label>
-                    
-                    <input type="radio" id="water-amount-5" name="waterAmount" aria-label="sehr viel Wasser" value="5">
-                    <label for="water-amount-5" class="drinkcard-cc water-amount-5"></label>
+                    <input type="radio" name="waterAmount" aria-label="sehr wenig Wasser" value="1">
+                    <label for="water-amount-1" id="water-amount-1" class="drinkcard-cc water-amount-1"
+                        onclick="wateringCans(1)"></label>
+
+                    <input type="radio" name="waterAmount" aria-label="wenig Wasser" value="2">
+                    <label for="water-amount-2" id="water-amount-2" class="drinkcard-cc water-amount-2"
+                        onclick="wateringCans(2)"></label>
+
+                    <input type="radio" name="waterAmount" aria-label="mittel viel Wasser" value="3">
+                    <label for="water-amount-3" id="water-amount-3" class="drinkcard-cc water-amount-3"
+                        onclick="wateringCans(3)"></label>
+
+                    <input type="radio" name="waterAmount" aria-label="viel Wasser" value="4">
+                    <label for="water-amount-4" id="water-amount-4" class="drinkcard-cc water-amount-4"
+                        onclick="wateringCans(4)"></label>
+
+                    <input type="radio" name="waterAmount" aria-label="sehr viel Wasser" value="5">
+                    <label for="water-amount-5" id="water-amount-5" class="drinkcard-cc water-amount-5"
+                        onclick="wateringCans(5)"></label>
                 </li>
                 <li>Licht: Halbschatten</li>
                 <li>Dünger: Frühling</li>
@@ -45,7 +50,19 @@
             </p>
         </details>
     </div>
-    <p> nur ein Test </p>
 </body>
+<script>
+
+    function wateringCans(amount) {
+        for (var i = 1; i <= amount; i++) {
+            document.getElementById("water-amount-" + i).style.filter = "none";
+        }
+        for (var i = 5; i > amount; i--) {
+            document.getElementById("water-amount-" + i).style.filter = "brightness(1.8) grayscale(1) opacity(.7)";
+        }
+
+        console.log("WaterAmount is " + i);
+    }
+</script>
 
 </html>

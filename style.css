@@ -48,19 +48,13 @@ figcaption {
     appearance: none;
 }
 
-.drinkcard-cc {
-    background-image: url(https://cdn-icons-png.flaticon.com/512/184/184981.png?w=740&t=st=1676919057~exp=1676919657~hmac=04dedd86eff2f35748e058721c87b44c7aace839f50753d4db6c2deca69dc787;)
-}
 
-.cc-selector input:active+.drinkcard-cc {
-    opacity: .9;
-}
-
-.cc-selector input:checked+.drinkcard-cc {
+/*.cc-selector input:checked+.drinkcard-cc {
     filter: none;
-}
+}*/
 
 .drinkcard-cc {
+    background-image: url(https://cdn-icons-png.flaticon.com/512/184/184981.png?w=740&t=st=1676919057~exp=1676919657~hmac=04dedd86eff2f35748e058721c87b44c7aace839f50753d4db6c2deca69dc787;);
     cursor: pointer;
     background-size: contain;
     background-repeat: no-repeat;
