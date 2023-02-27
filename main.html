@@ -12,31 +12,51 @@
 
         <img src="plants/einblatt.jpg" alt="friedenslilie" class="cardpics">
         <figcaption>Friedenslilie</figcaption>
-        <details>
+        <details open>
             <summary>Zusammenfassung</summary>
             <ul class="cc-selector">
                 <li>Wasser:
                     <input type="radio" name="waterAmount" aria-label="sehr wenig Wasser" value="1">
-                    <label for="water-amount-1" id="water-amount-1" class="drinkcard-cc water-amount-1"
-                        onclick="wateringCans(1)"></label>
+                    <label for="water-amount-1" id="water-amount-1" class="wateringCans drinkcard-cc water-amount-1"
+                        onclick="imgRadios('water', 1)"></label>
 
                     <input type="radio" name="waterAmount" aria-label="wenig Wasser" value="2">
-                    <label for="water-amount-2" id="water-amount-2" class="drinkcard-cc water-amount-2"
-                        onclick="wateringCans(2)"></label>
+                    <label for="water-amount-2" id="water-amount-2" class="wateringCans drinkcard-cc water-amount-2"
+                        onclick="imgRadios('water', 2)"></label>
 
                     <input type="radio" name="waterAmount" aria-label="mittel viel Wasser" value="3">
-                    <label for="water-amount-3" id="water-amount-3" class="drinkcard-cc water-amount-3"
-                        onclick="wateringCans(3)"></label>
+                    <label for="water-amount-3" id="water-amount-3" class="wateringCans drinkcard-cc water-amount-3"
+                        onclick="imgRadios('water', 3)"></label>
 
                     <input type="radio" name="waterAmount" aria-label="viel Wasser" value="4">
-                    <label for="water-amount-4" id="water-amount-4" class="drinkcard-cc water-amount-4"
-                        onclick="wateringCans(4)"></label>
+                    <label for="water-amount-4" id="water-amount-4" class="wateringCans drinkcard-cc water-amount-4"
+                        onclick="imgRadios('water', 4)"></label>
 
                     <input type="radio" name="waterAmount" aria-label="sehr viel Wasser" value="5">
-                    <label for="water-amount-5" id="water-amount-5" class="drinkcard-cc water-amount-5"
-                        onclick="wateringCans(5)"></label>
+                    <label for="water-amount-5" id="water-amount-5" class="wateringCans drinkcard-cc water-amount-5"
+                        onclick="imgRadios('water', 5)"></label>
                 </li>
-                <li>Licht: Halbschatten</li>
+                <li>Licht:
+                    <input type="radio" name="lightAmount" aria-label="sehr wenig Licht" value="1">
+                    <label for="light-amount-1" id="light-amount-1" class="suns drinkcard-cc light-amount-1"
+                        onclick="imgRadios('light', 1)"></label>
+
+                    <input type="radio" name="lightAmount" aria-label="wenig Licht" value="2">
+                    <label for="light-amount-2" id="light-amount-2" class="suns drinkcard-cc light-amount-2"
+                        onclick="imgRadios('light', 2)"></label>
+
+                    <input type="radio" name="lightAmount" aria-label="mittel viel Licht" value="3">
+                    <label for="light-amount-3" id="light-amount-3" class="suns drinkcard-cc light-amount-3"
+                        onclick="imgRadios('light', 3)"></label>
+
+                    <input type="radio" name="waterAmount" aria-label="viel Licht" value="4">
+                    <label for="light-amount-4" id="light-amount-4" class="suns drinkcard-cc light-amount-4"
+                        onclick="imgRadios('light', 4)"></label>
+
+                    <input type="radio" name="lightAmount" aria-label="sehr viel Licht" value="5">
+                    <label for="light-amount-5" id="light-amount-5" class="suns drinkcard-cc light-amount-5"
+                        onclick="imgRadios('light', 5)"></label>
+                </li>
                 <li>Dünger: Frühling</li>
             </ul>
         </details>
@@ -52,16 +72,20 @@
     </div>
 </body>
 <script>
+let bild = "licht";
+let menge = 1;
+let gesamt = (bild + "-amount-"+ menge);
 
-    function wateringCans(amount) {
+console.log(gesamt);
+    function imgRadios(imgType, amount) {
         for (var i = 1; i <= amount; i++) {
-            document.getElementById("water-amount-" + i).style.filter = "none";
+            document.getElementById(imgType + "-amount-" + i).style.filter = "none";
         }
         for (var i = 5; i > amount; i--) {
-            document.getElementById("water-amount-" + i).style.filter = "brightness(1.8) grayscale(1) opacity(.7)";
+            document.getElementById(imgType + "-amount-" + i).style.filter = "grayscale(1)";
         }
 
-        console.log("WaterAmount is " + i);
+        console.log("WaterAmount is " + i)
     }
 </script>
 
