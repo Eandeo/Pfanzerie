@@ -4,7 +4,7 @@
 <head>
     <title>Pflanzerie</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="imgRadios.css">
 </head>
 
 <body>
@@ -14,8 +14,10 @@
         <figcaption>Friedenslilie</figcaption>
         <details open>
             <summary>Zusammenfassung</summary>
+            <button class="settings"></button>
             <ul class="cc-selector">
-                <li>Wasser:
+                <li class="amountRadios">Wasser:<br>
+                    <div class="radios">
                     <input type="radio" name="waterAmount" aria-label="sehr wenig Wasser" value="1">
                     <label for="water-amount-1" id="water-amount-1" class="wateringCans drinkcard-cc water-amount-1"
                         onclick="imgRadios('water', 1)"></label>
@@ -35,8 +37,10 @@
                     <input type="radio" name="waterAmount" aria-label="sehr viel Wasser" value="5">
                     <label for="water-amount-5" id="water-amount-5" class="wateringCans drinkcard-cc water-amount-5"
                         onclick="imgRadios('water', 5)"></label>
+                    </div>
                 </li>
-                <li>Licht:
+                <li class="amountRadios">Licht:<br>
+                    <div class="radios">
                     <input type="radio" name="lightAmount" aria-label="sehr wenig Licht" value="1">
                     <label for="light-amount-1" id="light-amount-1" class="suns drinkcard-cc light-amount-1"
                         onclick="imgRadios('light', 1)"></label>
@@ -56,13 +60,13 @@
                     <input type="radio" name="lightAmount" aria-label="sehr viel Licht" value="5">
                     <label for="light-amount-5" id="light-amount-5" class="suns drinkcard-cc light-amount-5"
                         onclick="imgRadios('light', 5)"></label>
+                    </div>
                 </li>
-                <li>Dünger: Frühling</li>
             </ul>
         </details>
-        <details>
+        <details open>
             <summary>Beschreibung</summary>
-            <p>
+            <p class="about">
                 Das Einblatt ist wegen ihrer kleinen weißen Blüten sehr beliebt.
                 Dieser Pflanze wird in Deutschland auch Scheidenblatt, Friedenslilie, Blattfahne oder Spathiphyllum
                 genannt.

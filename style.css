@@ -42,42 +42,51 @@ figcaption {
     margin: 0.5rem;
 }
 
-.cc-selector input {
-    margin: 0;
-    padding: 0;
-    appearance: none;
-}
-
-.drinkcard-cc {
-    cursor: pointer;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    transition: all 100ms ease-in;
-    filter: grayscale(1);
-}
-
-.wateringCans{
-    background-image: url(symbols/wateringCan.png);
-}
-
-.suns{
-    background-image: url(symbols/sun.png);
-}
-
-.drinkcard-cc:hover {
-    filter: brightness(1.2) grayscale(.5) opacity(.9);
-
+details{
+    margin: auto;
+    text-align: center;
 }
 
 
 summary {
     font-size: large;
+    text-align: left;
 }
 
 li,
 p {
     color: #4d4d4d;
+}
+
+ul{ 
+    list-style-type: none;
+    padding: 0;
+  }
+
+.settings{
+    float: right;
+    float: clear;
+    background-image: url(symbols/settings.svg);
+    background-color: transparent;
+    background-size: cover;
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 0.9rem;
+
+}
+
+.settings:hover{
+    cursor: pointer;
+    border: 1px;
+}
+
+.about{
+    text-align: justify;
+}
+.amountRadios{
+    text-align: left;
+}
+.radios{
+    display: flex;
+    justify-content: center;
 }
