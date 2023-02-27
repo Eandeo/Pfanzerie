@@ -54,10 +54,10 @@
 <script>
 
     function wateringCans(amount) {
-        for (var i = 1; i <= amount; i++) {
+        for (let i = 1; i <= amount; i++) {
             document.getElementById("water-amount-" + i).style.filter = "none";
         }
-        for (var i = 5; i > amount; i--) {
+        for (let i = 5; i > amount; i--) {
             document.getElementById("water-amount-" + i).style.filter = "brightness(1.8) grayscale(1) opacity(.7)";
         }
 
