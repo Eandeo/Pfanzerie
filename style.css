@@ -22,7 +22,8 @@ html {
 
 
 .card {
-    width: 22rem;
+    width:100%;
+    max-width: 768px;
     border-radius: 1rem;
     background-color: beige;
     padding: 1rem;
@@ -87,7 +88,7 @@ ul{
 }
 .amountRadios{
     text-align: left;
-    
+
 }
 .radios{
     display: flex;
