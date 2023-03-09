@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>Pflanzerie</title>
+    <title>Pflanzerie</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="imgRadios.css">
 </head>
@@ -94,7 +95,7 @@
     function changeSettings(){
         console.log(settingsIsClicked); 
         if(settingsIsClicked === false){
-            document.getElementById("settings").style.backgroundImage = "url('symbols/close.svg')";
+            document.getElementById("settings").style.backgroundImage = "url('symbols/close.svg')"; //Anregung von Vanessa: nicht .style sondern class ändern!
             settingsIsClicked = true;
             document.getElementsByClassName("amountRadios").disabled = true;
             
