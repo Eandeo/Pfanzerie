@@ -14,7 +14,7 @@
         <figcaption>Friedenslilie</figcaption>
         <details open>
             <summary>Zusammenfassung</summary>
-            <button class="settings"></button>
+            <button onclick="changeSettings()" id="settings"></button>
             <ul class="cc-selector">
                 <li class="amountRadios">Wasser:<br>
                     <div class="radios">
@@ -76,21 +76,35 @@
     </div>
 </body>
 <script>
-let bild = "licht";
-let menge = 1;
-let gesamt = (bild + "-amount-"+ menge);
-
-console.log(gesamt);
+    //function for changing the sun and watering can if selected
     function imgRadios(imgType, amount) {
+        if(settingsIsClicked===true){
         for (var i = 1; i <= amount; i++) {
             document.getElementById(imgType + "-amount-" + i).style.filter = "none";
         }
         for (var i = 5; i > amount; i--) {
             document.getElementById(imgType + "-amount-" + i).style.filter = "grayscale(1)";
         }
-
-        console.log("WaterAmount is " + i)
+        console.log("WaterAmount is " + i);
+        }
     }
+
+    //changing the settings of water and sun; otherwise locked
+    let settingsIsClicked = false;
+    function changeSettings(){
+        console.log(settingsIsClicked); 
+        if(settingsIsClicked === false){
+            document.getElementById("settings").style.backgroundImage = "url('symbols/close.svg')";
+            settingsIsClicked = true;
+            document.getElementsByClassName("amountRadios").disabled = true;
+            
+            } else {
+            document.getElementById("settings").style.backgroundImage = "url('symbols/settings.svg')";
+            settingsIsClicked = false;
+            document.getElementsByClassName("amountRadios").disabled = false;
+            }   
+    }
+
 </script>
 
 </html>

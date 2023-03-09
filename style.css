@@ -63,7 +63,7 @@ ul{
     padding: 0;
   }
 
-.settings{
+#settings{
     float: right;
     float: clear;
     background-image: url(symbols/settings.svg);
@@ -75,6 +75,8 @@ ul{
 
 }
 
+
+
 .settings:hover{
     cursor: pointer;
     border: 1px;
@@ -85,6 +87,7 @@ ul{
 }
 .amountRadios{
     text-align: left;
+    
 }
 .radios{
     display: flex;
