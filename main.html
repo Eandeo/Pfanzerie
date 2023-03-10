@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Pflanzerie</title> 
+    <title>Pflanzerie</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-desktop.css">
@@ -13,100 +13,111 @@
     <div class="card" id="test">
 
         <img src="plants/einblatt.jpg" alt="friedenslilie" class="cardpics">
-        <figcaption>Friedenslilie</figcaption>
+        <figcaption id="name"></figcaption>
         <details open>
             <summary>Zusammenfassung</summary>
             <button onclick="changeSettings()" id="settings"></button>
             <ul class="cc-selector">
                 <li class="amountRadios">Wasser:<br>
                     <div class="radios">
-                    <input type="radio" name="waterAmount" aria-label="sehr wenig Wasser" value="1">
-                    <label for="water-amount-1" id="water-amount-1" class="wateringCans drinkcard-cc water-amount-1"
-                        onclick="imgRadios('water', 1)"></label>
+                        <input type="radio" name="waterAmount" aria-label="sehr wenig Wasser" value="1">
+                        <label for="water-amount-1" id="water-amount-1" class="wateringCans drinkcard-cc water-amount-1"
+                            onclick="imgRadios('water', 1)"></label>
 
-                    <input type="radio" name="waterAmount" aria-label="wenig Wasser" value="2">
-                    <label for="water-amount-2" id="water-amount-2" class="wateringCans drinkcard-cc water-amount-2"
-                        onclick="imgRadios('water', 2)"></label>
+                        <input type="radio" name="waterAmount" aria-label="wenig Wasser" value="2">
+                        <label for="water-amount-2" id="water-amount-2" class="wateringCans drinkcard-cc water-amount-2"
+                            onclick="imgRadios('water', 2)"></label>
 
-                    <input type="radio" name="waterAmount" aria-label="mittel viel Wasser" value="3">
-                    <label for="water-amount-3" id="water-amount-3" class="wateringCans drinkcard-cc water-amount-3"
-                        onclick="imgRadios('water', 3)"></label>
+                        <input type="radio" name="waterAmount" aria-label="mittel viel Wasser" value="3">
+                        <label for="water-amount-3" id="water-amount-3" class="wateringCans drinkcard-cc water-amount-3"
+                            onclick="imgRadios('water', 3)"></label>
 
-                    <input type="radio" name="waterAmount" aria-label="viel Wasser" value="4">
-                    <label for="water-amount-4" id="water-amount-4" class="wateringCans drinkcard-cc water-amount-4"
-                        onclick="imgRadios('water', 4)"></label>
+                        <input type="radio" name="waterAmount" aria-label="viel Wasser" value="4">
+                        <label for="water-amount-4" id="water-amount-4" class="wateringCans drinkcard-cc water-amount-4"
+                            onclick="imgRadios('water', 4)"></label>
 
-                    <input type="radio" name="waterAmount" aria-label="sehr viel Wasser" value="5">
-                    <label for="water-amount-5" id="water-amount-5" class="wateringCans drinkcard-cc water-amount-5"
-                        onclick="imgRadios('water', 5)"></label>
+                        <input type="radio" name="waterAmount" aria-label="sehr viel Wasser" value="5">
+                        <label for="water-amount-5" id="water-amount-5" class="wateringCans drinkcard-cc water-amount-5"
+                            onclick="imgRadios('water', 5)"></label>
                     </div>
                 </li>
                 <li class="amountRadios">Licht:<br>
                     <div class="radios">
-                    <input type="radio" name="lightAmount" aria-label="sehr wenig Licht" value="1">
-                    <label for="light-amount-1" id="light-amount-1" class="suns drinkcard-cc light-amount-1"
-                        onclick="imgRadios('light', 1)"></label>
+                        <input type="radio" name="lightAmount" aria-label="sehr wenig Licht" value="1">
+                        <label for="light-amount-1" id="light-amount-1" class="suns drinkcard-cc light-amount-1"
+                            onclick="imgRadios('light', 1)"></label>
 
-                    <input type="radio" name="lightAmount" aria-label="wenig Licht" value="2">
-                    <label for="light-amount-2" id="light-amount-2" class="suns drinkcard-cc light-amount-2"
-                        onclick="imgRadios('light', 2)"></label>
+                        <input type="radio" name="lightAmount" aria-label="wenig Licht" value="2">
+                        <label for="light-amount-2" id="light-amount-2" class="suns drinkcard-cc light-amount-2"
+                            onclick="imgRadios('light', 2)"></label>
 
-                    <input type="radio" name="lightAmount" aria-label="mittel viel Licht" value="3">
-                    <label for="light-amount-3" id="light-amount-3" class="suns drinkcard-cc light-amount-3"
-                        onclick="imgRadios('light', 3)"></label>
+                        <input type="radio" name="lightAmount" aria-label="mittel viel Licht" value="3">
+                        <label for="light-amount-3" id="light-amount-3" class="suns drinkcard-cc light-amount-3"
+                            onclick="imgRadios('light', 3)"></label>
 
-                    <input type="radio" name="waterAmount" aria-label="viel Licht" value="4">
-                    <label for="light-amount-4" id="light-amount-4" class="suns drinkcard-cc light-amount-4"
-                        onclick="imgRadios('light', 4)"></label>
+                        <input type="radio" name="waterAmount" aria-label="viel Licht" value="4">
+                        <label for="light-amount-4" id="light-amount-4" class="suns drinkcard-cc light-amount-4"
+                            onclick="imgRadios('light', 4)"></label>
 
-                    <input type="radio" name="lightAmount" aria-label="sehr viel Licht" value="5">
-                    <label for="light-amount-5" id="light-amount-5" class="suns drinkcard-cc light-amount-5"
-                        onclick="imgRadios('light', 5)"></label>
+                        <input type="radio" name="lightAmount" aria-label="sehr viel Licht" value="5">
+                        <label for="light-amount-5" id="light-amount-5" class="suns drinkcard-cc light-amount-5"
+                            onclick="imgRadios('light', 5)"></label>
                     </div>
                 </li>
             </ul>
         </details>
         <details open>
             <summary>Beschreibung</summary>
-            <p class="about">
-                Das Einblatt ist wegen ihrer kleinen weißen Blüten sehr beliebt.
-                Dieser Pflanze wird in Deutschland auch Scheidenblatt, Friedenslilie, Blattfahne oder Spathiphyllum
-                genannt.
-                Die Spathiphyllum kommt ursprünglich aus Brasilien. Die Pflanzenfamilie ist Araceae.
-            </p>
+            <p id="about" class="about"></p>
         </details>
     </div>
 </body>
+<script type="text/javascript" src="plants.json"></script>
 <script>
     //function for changing the sun and watering can if selected
     function imgRadios(imgType, amount) {
-        if(settingsIsClicked===true){
-        for (var i = 1; i <= amount; i++) {
-            document.getElementById(imgType + "-amount-" + i).style.filter = "none";
-        }
-        for (var i = 5; i > amount; i--) {
-            document.getElementById(imgType + "-amount-" + i).style.filter = "grayscale(1)";
-        }
-        console.log(imgType+ "Amount is " + i);
-        }
+        //if (settingsIsClicked === true) {
+            for (var i = 1; i <= amount; i++) {
+                document.getElementById(imgType + "-amount-" + i).style.filter = "none";
+            }
+            for (var i = 5; i > amount; i--) {
+                document.getElementById(imgType + "-amount-" + i).style.filter = "grayscale(1)";
+            }
+            console.log(imgType + "Amount is " + i);
+      // }
     }
 
     //changing the settings of water and sun; otherwise locked
     let settingsIsClicked = false;
-    function changeSettings(){
-        console.log(settingsIsClicked); 
-        if(settingsIsClicked === false){
+    function changeSettings() {
+        console.log(settingsIsClicked);
+        if (settingsIsClicked === false) {
             document.getElementById("settings").style.backgroundImage = "url('symbols/close.svg')"; //Anregung von Vanessa: nicht .style sondern class ändern!
             settingsIsClicked = true;
-            document.getElementsByClassName("amountRadios").disabled = true;
-            
-            } else {
+        } else {
             document.getElementById("settings").style.backgroundImage = "url('symbols/settings.svg')";
             settingsIsClicked = false;
-            document.getElementsByClassName("amountRadios").disabled = false;
-            }   
+        }
+
+
     }
 
+    const plant1 = {
+        id: 1,
+        name: "Friedenslilie",
+        room: "Wohnzimmer",
+        waterAmount: 5,
+        lightAmount: 4,
+        description: "Das Einblatt ist wegen ihrer kleinen weißen Blüten sehr beliebt. Dieser Pflanze wird in Deutschland auch Scheidenblatt, Friedenslilie, Blattfahne oder Spathiphyllum genannt. Die Spathiphyllum kommt ursprünglich aus Brasilien. Die Pflanzenfamilie ist Araceae."
+    }
+
+    document.getElementById("name").innerHTML = plant1["name"];
+    document.getElementById("about").innerHTML =plant1["description"];
+    imgRadios("water",plant1["waterAmount"]);
+    imgRadios("light",plant1["lightAmount"]);
+
+
 </script>
+
 
 </html>

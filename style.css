@@ -32,7 +32,7 @@ html {
 .cardpics {
     width: 100%;
     height: 16rem;
-
+    object-fit: cover;
     border-radius: 1rem;
     margin: auto;
     display: block;
