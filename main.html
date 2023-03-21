@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-desktop.css">
     <link rel="stylesheet" href="imgRadios.css">
+    <link rel="stylesheet" href="addForm.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
@@ -74,6 +75,44 @@
     </div>
     <button id="addPlantButton"><i class="material-icons">add</i>Hinzufügen</button>
 
+    <div class="addPlantForm" id="plantForm">
+        <form class="form-container">
+            
+                <legend>Füge eine neue Pflanze hinzu:</legend>
+            <label for="plantName">Name der Pflanze:</label><br>
+            <input type="text" placeholder="Friedenslilie" name="plantName" required><br>
+            
+            <label for="plantRoom">Standort der Pflanze:</label><br>
+            <input type="text" placeholder="Wohnzimmer" name="plantRoom" required><br>
+
+            <label for="water">Wasser:</label>
+            <select name="water">
+                <option value="1">sehr wenig Wasser</option>
+                <option value="2">wenig Wasser</option>
+                <option value="3" selected>mittel viel Wasser</option>
+                <option value="4">viel Wasser</option>
+                <option value="5">sehr viel Wasser</option>
+              </select><br>
+
+              <label for="light">Licht:</label>
+              <select name="light">
+                  <option value="1">sehr wenig Licht</option>
+                  <option value="2">wenig Licht</option>
+                  <option value="3" selected>mittel viel Licht</option>
+                  <option value="4">viel Licht</option>
+                  <option value="5">sehr viel Licht</option>
+                </select><br>
+
+            <label for="description">Beschreibung hinzufügen:</label><br>
+            <textarea name="description" rows="10" cols="20"></textarea><br>
+            <button type="button" class="submitBtn">Hinzufügen</button>
+            <button type="button" class="cancelbtn">Abbrechen</button>
+        
+        
+        </form>
+
+    </div>
+
 </body>
 <script type="text/javascript" src="plants.json"></script>
 <script>
@@ -81,19 +120,19 @@
     //function for changing the sun and watering can if selected
     function onRadioImgClick(imgType, amount) {
         if (settingsIsClicked === true) {
-           setRadioAmount(imgType, amount);
-           //hier muss noch der Wert im JSON überschrieben werden.
-       }
+            setRadioAmount(imgType, amount);
+            //hier muss noch der Wert im JSON überschrieben werden.
+        }
     }
     //sets the amount of selected amounts x/5
-    function setRadioAmount(imgType, amount){
+    function setRadioAmount(imgType, amount) {
         for (var i = 1; i <= amount; i++) {
-                document.getElementById(imgType + "-amount-" + i).style.filter = "none";
-            }
-            for (var i = 5; i > amount; i--) {
-                document.getElementById(imgType + "-amount-" + i).style.filter = "grayscale(1)";
-            }
-            console.log(imgType + "Amount is " + i);
+            document.getElementById(imgType + "-amount-" + i).style.filter = "none";
+        }
+        for (var i = 5; i > amount; i--) {
+            document.getElementById(imgType + "-amount-" + i).style.filter = "grayscale(1)";
+        }
+        console.log(imgType + "Amount is " + i);
     }
 
     //change the symbol of the settings button when clicked + sets the change mode
@@ -115,17 +154,17 @@
         id: 1,
         name: "Friedenslilie",
         room: "Wohnzimmer",
-        img:"plants/einblatt.jpg",
+        img: "plants/einblatt.jpg",
         waterAmount: 5,
         lightAmount: 4,
         description: "Das Einblatt ist wegen ihrer kleinen weißen Blüten sehr beliebt. Dieser Pflanze wird in Deutschland auch Scheidenblatt, Friedenslilie, Blattfahne oder Spathiphyllum genannt. Die Spathiphyllum kommt ursprünglich aus Brasilien. Die Pflanzenfamilie ist Araceae."
     }
 
     document.getElementById("name").innerHTML = plant1["name"];
-    document.getElementById("about").innerHTML =plant1["description"];
+    document.getElementById("about").innerHTML = plant1["description"];
     document.getElementById("plantPic").src = "plants/einblatt.jpg";
-    setRadioAmount("water",plant1["waterAmount"]);
-    setRadioAmount("light",plant1["lightAmount"]);
+    setRadioAmount("water", plant1["waterAmount"]);
+    setRadioAmount("light", plant1["lightAmount"]);
 
 
 </script>
