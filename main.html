@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="card" id="test">
+    <div class="card">
 
         <img src="" alt="friedenslilie" id="plantPic" class="cardpics">
         <figcaption id="name"></figcaption>
@@ -73,6 +73,7 @@
         </details>
     </div>
     <button id="addPlantButton"><i class="material-icons">add</i>Hinzufügen</button>
+
 </body>
 <script type="text/javascript" src="plants.json"></script>
 <script>
@@ -95,7 +96,7 @@
             console.log(imgType + "Amount is " + i);
     }
 
-    //change the smybol of the settings button when clicked + sets the change mode
+    //change the symbol of the settings button when clicked + sets the change mode
     let settingsIsClicked = false;
     function changeSettings() {
         console.log(settingsIsClicked);

@@ -65,6 +65,7 @@ ul{
   }
 
 #settings{
+    all: unset;
     float: right;
     float: clear;
     background-image: url(symbols/settings.svg);
@@ -73,15 +74,16 @@ ul{
     height: 1.8rem;
     width: 1.8rem;
     border-radius: 0.9rem;
-
-}
-
-
-
-.settings:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
-    border: 1px;
+
+
 }
+
+#settings:hover{
+    background-color: rgba(221, 221, 221, 0.459);
+}
+
 
 .about{
     text-align: justify;
@@ -98,16 +100,25 @@ ul{
 #addPlantButton{
     all: unset;
     padding: 0.5rem;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     border-radius:  1.5rem;
     height: 1.5rem;
     position: absolute;
     bottom: 3rem; right: 2rem;
     vertical-align: middle;
-         
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;  
+    cursor: pointer;
 }
+
+#addPlantButton:hover {
+    background-color: rgba(221, 221, 221, 0.459);
+}
+
 
 .material-icons{
     vertical-align: middle;
 }
+
+
 
