@@ -73,7 +73,7 @@
             <p id="about" class="about"></p>
         </details>
     </div>
-    <button id="addPlantButton"><i class="material-icons">add</i>Hinzufügen</button>
+    <button id="addPlantButton" onclick="showAddPlantForm"><i class="material-icons">add</i>Hinzufügen</button>
 
 
 
@@ -192,7 +192,10 @@
             document.getElementById("settings").style.backgroundImage = "url('symbols/settings.svg')";
             settingsIsClicked = false;
         }
+    }
 
+    function showAddPlantForm(){
+        // document.getElementById("plantForm").style.display = "inline";
 
     }
 

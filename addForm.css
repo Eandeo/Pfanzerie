@@ -1,4 +1,7 @@
 .form-container {
+    display: none;
+    position: absolute;
+    top: 0;
     width: 100%;
     max-width: 768px;
     padding: 1rem;
@@ -12,7 +15,7 @@
 }
 
 .formPlantImg{
-    background-image: url:(plants/formInputPlant.jpg);
+    background-image: url(plants/formInputPlant.jpg);
 }
 
 .textInputs:hover {
@@ -67,7 +70,8 @@
 
 #formImgUpload{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
 }
 
