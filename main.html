@@ -75,40 +75,86 @@
     </div>
     <button id="addPlantButton"><i class="material-icons">add</i>Hinzufügen</button>
 
+
+
     <div class="addPlantForm" id="plantForm">
         <form class="form-container">
-            
-                <legend>Füge eine neue Pflanze hinzu:</legend>
+
+            <legend class="addPlantTitle">Füge eine neue Pflanze hinzu:</legend>
+            <div id="formImgUpload">
+                <img src="plants/formInputPlant.jpg" id="formPlantImgLabel">
+                <label for="formPlantImg" aria-label="Bild der Pflanze"></label>
+                <input type="file" name="formPlantImg" id="formPlantImg" class="scr-only"
+                    accept="image/png, image/gif, image/jpeg"><br>
+            </div>
             <label for="plantName">Name der Pflanze:</label><br>
-            <input type="text" placeholder="Friedenslilie" name="plantName" required><br>
-            
+            <input class="formInputBoxes" type="text" placeholder="z.B.: Friedenslilie" name="plantName" required><br>
+
             <label for="plantRoom">Standort der Pflanze:</label><br>
-            <input type="text" placeholder="Wohnzimmer" name="plantRoom" required><br>
+            <input class="formInputBoxes" type="text" placeholder="z.B.: Wohnzimmer" name="plantRoom" required><br>
 
-            <label for="water">Wasser:</label>
-            <select name="water">
-                <option value="1">sehr wenig Wasser</option>
-                <option value="2">wenig Wasser</option>
-                <option value="3" selected>mittel viel Wasser</option>
-                <option value="4">viel Wasser</option>
-                <option value="5">sehr viel Wasser</option>
-              </select><br>
+            <ul class="cc-selector">
+                <li class="amountRadios">Wasser:<br>
+                    <div class="radios">
+                        <input type="radio" name="waterAmount" aria-label="sehr wenig Wasser" value="1">
+                        <label for="water-amount-1" id="formWater-amount-1"
+                            class="wateringCans drinkcard-cc water-amount-1"
+                            onclick="setRadioAmount('formWater', 1)"></label>
 
-              <label for="light">Licht:</label>
-              <select name="light">
-                  <option value="1">sehr wenig Licht</option>
-                  <option value="2">wenig Licht</option>
-                  <option value="3" selected>mittel viel Licht</option>
-                  <option value="4">viel Licht</option>
-                  <option value="5">sehr viel Licht</option>
-                </select><br>
+                        <input type="radio" name="waterAmount" aria-label="wenig Wasser" value="2">
+                        <label for="water-amount-2" id="formWater-amount-2"
+                            class="wateringCans drinkcard-cc water-amount-2"
+                            onclick="setRadioAmount('formWater', 2)"></label>
+
+                        <input type="radio" name="waterAmount" aria-label="mittel viel Wasser" value="3">
+                        <label for="water-amount-3" id="formWater-amount-3"
+                            class="wateringCans drinkcard-cc water-amount-3"
+                            onclick="setRadioAmount('formWater', 3)"></label>
+
+                        <input type="radio" name="waterAmount" aria-label="viel Wasser" value="4">
+                        <label for="water-amount-4" id="formWater-amount-4"
+                            class="wateringCans drinkcard-cc water-amount-4"
+                            onclick="setRadioAmount('formWater', 4)"></label>
+
+                        <input type="radio" name="waterAmount" aria-label="sehr viel Wasser" value="5">
+                        <label for="water-amount-5" id="formWater-amount-5"
+                            class="wateringCans drinkcard-cc water-amount-5"
+                            onclick="setRadioAmount('formWater', 5)"></label>
+                    </div>
+                </li>
+                <li class="amountRadios">Licht:<br>
+                    <div class="radios">
+                        <input type="radio" name="lightAmount" aria-label="sehr wenig Licht" value="1">
+                        <label for="light-amount-1" id="formLight-amount-1" class="suns drinkcard-cc light-amount-1"
+                            onclick="setRadioAmount('light', 1)"></label>
+
+                        <input type="radio" name="lightAmount" aria-label="wenig Licht" value="2">
+                        <label for="light-amount-2" id="formLight-amount-2" class="suns drinkcard-cc light-amount-2"
+                            onclick="setRadioAmount('formLight', 2)"></label>
+
+                        <input type="radio" name="lightAmount" aria-label="mittel viel Licht" value="3">
+                        <label for="light-amount-3" id="formLight-amount-3" class="suns drinkcard-cc light-amount-3"
+                            onclick="setRadioAmount('formLight', 3)"></label>
+
+                        <input type="radio" name="waterAmount" aria-label="viel Licht" value="4">
+                        <label for="light-amount-4" id="formLight-amount-4" class="suns drinkcard-cc light-amount-4"
+                            onclick="setRadioAmount('formLight', 4)"></label>
+
+                        <input type="radio" name="lightAmount" aria-label="sehr viel Licht" value="5">
+                        <label for="light-amount-5" id="formLight-amount-5" class="suns drinkcard-cc light-amount-5"
+                            onclick="setRadioAmount('formLight', 5)"></label>
+                    </div>
+                </li>
+            </ul>
+            </details>
 
             <label for="description">Beschreibung hinzufügen:</label><br>
-            <textarea name="description" rows="10" cols="20"></textarea><br>
-            <button type="button" class="submitBtn">Hinzufügen</button>
-            <button type="button" class="cancelbtn">Abbrechen</button>
-        
-        
+            <textarea class="formInputBoxes" id="formPlantdescription" name="description" placeholder=""></textarea><br>
+            <div class="formBtns">
+                <input type="submit" value="Hinzufügen" class="submitBtn"></button>
+                <button type="button" class="cancelBtn">Abbrechen</button>
+            </div>
+
         </form>
 
     </div>
@@ -161,7 +207,7 @@
     }
 
     document.getElementById("name").innerHTML = plant1["name"];
-    document.getElementById("about").innerHTML = plant1["description"];
+    document.getElementsByClassName("about").innerHTML = plant1["description"];
     document.getElementById("plantPic").src = "plants/einblatt.jpg";
     setRadioAmount("water", plant1["waterAmount"]);
     setRadioAmount("light", plant1["lightAmount"]);
