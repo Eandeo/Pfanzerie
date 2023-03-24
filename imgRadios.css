@@ -9,10 +9,11 @@
     background-size: contain;
     background-repeat: no-repeat;
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     transition: all 100ms ease-in;
     filter: grayscale(1);
+    margin: 0.2rem;
 }
 
 .wateringCans{
@@ -26,4 +27,16 @@
 .drinkcard-cc:hover {
     filter: brightness(1.2) grayscale(.5) opacity(.9);
 
+}
+
+.drinkcardSelected{
+    filter: none;
+}
+
+.drinkcardUnselected{
+    filter: grayscale(1);
+}
+
+noHover{
+pointer-events: none;
 }

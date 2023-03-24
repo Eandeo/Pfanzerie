@@ -1,6 +1,15 @@
-.form-container {
+.plantFormHidden{
     display: none;
+}
+
+.plantFormActive{
+    display: inline;
+}
+
+.form-container {
+    
     position: absolute;
+    left:0;
     top: 0;
     width: 100%;
     max-width: 768px;
