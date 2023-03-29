@@ -5,7 +5,6 @@
 }
 
 .drinkcard-cc {
-    cursor: pointer;
     background-size: contain;
     background-repeat: no-repeat;
     display: inline-block;
@@ -25,7 +24,10 @@
 }
 
 .drinkcard-cc:hover {
+    cursor: pointer;
     filter: brightness(1.2) grayscale(.5) opacity(.9);
+   
+
 
 }
 
@@ -37,6 +39,6 @@
     filter: grayscale(1);
 }
 
-noHover{
+.noHover{
 pointer-events: none;
 }
