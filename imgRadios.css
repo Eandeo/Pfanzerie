@@ -26,9 +26,6 @@
 .drinkcard-cc:hover {
     cursor: pointer;
     filter: brightness(1.2) grayscale(.5) opacity(.9);
-   
-
-
 }
 
 .drinkcardSelected{

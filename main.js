@@ -1,10 +1,5 @@
     //function for changing the sun and watering can if selected
     function onRadioImgClick(imgType, amount) {
-       
-    
-        //noHover.classList.toggle("noHover");
-        // });
-
         if (settingsIsClicked === true) {
             setRadioAmount(imgType, amount);
             //hier muss noch der Wert im JSON überschrieben werden.
@@ -47,7 +42,20 @@
         }
     }
 
+    let plantForm = document.getElementById("plantForm");
 
+    plantForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let plantName = document.getElementById("plant-name");
+        let plantRoom = document.getElementById("plant-room");
+        let waterAmount = document.querySelector('input[name="formWaterAmount"]:checked').value;
+        console.log(waterAmount);
+        
+    }) 
+
+
+    
 
     const plant1 = {
         id: 1,
@@ -60,7 +68,7 @@
     }
 
     document.getElementById("name").innerHTML = plant1["name"];
-    document.getElementsByClassName("about").innerHTML = plant1["description"];
+    document.getElementById("about").innerHTML = plant1["description"];
     document.getElementById("plantPic").src = "plants/einblatt.jpg";
     setRadioAmount("water", plant1["waterAmount"]);
     setRadioAmount("light", plant1["lightAmount"]);
