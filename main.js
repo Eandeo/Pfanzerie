@@ -51,6 +51,7 @@
         let plantRoom = document.getElementById("plant-room");
         let waterAmount = document.querySelector('input[name="formWaterAmount"]:checked').value;
         console.log(waterAmount);
+        //da geht's dann weiter mit submit und so...
         
     }) 
 
