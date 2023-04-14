@@ -42,18 +42,40 @@
         }
     }
 
+    //Submiting the addPlantForm 
     let plantForm = document.getElementById("plantForm");
 
     plantForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let plantName = document.getElementById("plant-name");
-        let plantRoom = document.getElementById("plant-room");
-        let waterAmount = document.querySelector('input[name="formWaterAmount"]:checked').value;
-        console.log(waterAmount);
-        //da geht's dann weiter mit submit und so...
+        const plantName = document.getElementById("plant-name").value;
+        const plantRoom = document.getElementById("plant-room").value;
+        const plantWater = document.querySelector('input[name="formWaterAmount"]:checked').value; //id beachten
+        const plantLight = document.querySelector('input[name="formLightAmount"]:checked').value;
+        const plantDescription = document.getElementById("form-plant-description").value; 
         
-    }) 
+        const newPlantdata = {
+            "name": plantName,
+            "room": plantRoom,
+            "waterAmount": plantWater,
+            "lightAmount": plantLight,
+            "description": plantDescription
+        };
+
+        const newPlantJson = JSON.stringify(newPlantdata);
+        console.log(newPlantJson);
+
+        e.target.reset();
+        document.getElementById("plantForm").classList.add("plantFormHidden");
+
+
+        
+        document.getElementById("name").innerHTML = newPlantdata["name"];
+        document.getElementById("about").innerHTML = newPlantdata["description"];
+        setRadioAmount("water", newPlantdata["waterAmount"]);
+        setRadioAmount("light", newPlantdata["lightAmount"]);
+
+    });
 
 
     
