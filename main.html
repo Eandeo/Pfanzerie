@@ -22,58 +22,39 @@
             <ul class="cc-selector ">
                 <li class="amountRadios">Wasser:<br>
                     <div class="radios">
-                        <input type="radio" name="waterAmount" id="input-water-amount-1" aria-label="sehr wenig Wasser" value="1">
-                        <label for="input-water-amount-1" id="water-amount-1"
-                            class="wateringCans drinkcard-cc noHover cardRadios"
-                            onclick="onRadioImgClick('water', 1)"></label>
+                        <input type="radio" onchange="onRadioImgClick('water')" name="waterAmount" id="input-water-amount-1" aria-label="sehr wenig Wasser" value="1">
+                        <label for="input-water-amount-1" id="water-amount-1" class="wateringCans drinkcard-cc noHover cardRadios"
+                            ></label>
 
-                        <input type="radio" name="waterAmount" aria-label="wenig Wasser" value="2">
-                        <label for="water-amount-2" id="water-amount-2"
-                            class="wateringCans drinkcard-cc noHover cardRadios"
-                            onclick="onRadioImgClick('water', 2)"></label>
+                        <input type="radio" onchange="onRadioImgClick('water')" name="waterAmount" id="input-water-amount-2" aria-label="wenig Wasser" value="2">
+                        <label for="input-water-amount-2" id="water-amount-2" class="wateringCans drinkcard-cc noHover cardRadios"></label>
 
-                        <input type="radio" name="waterAmount" id="input-water-amount-2" aria-label="mittel viel Wasser" value="3">
-                        <label for="input-water-amount-2" id="water-amount-3"
-                            class="wateringCans drinkcard-cc noHover cardRadios"
-                            onclick="onRadioImgClick('water', 3)"></label>
+                        <input checked="" type="radio" onchange="onRadioImgClick('water')" name="waterAmount" id="input-water-amount-3" aria-label="mittel viel Wasser" value="3">
+                        <label for="input-water-amount-3" id="water-amount-3" class="wateringCans drinkcard-cc noHover cardRadios"></label>
 
-                        <input type="radio" name="waterAmount" id="input-water-amount-4" aria-label="viel Wasser" value="4">
-                        <label for="input-water-amount-4" id="water-amount-4"
-                            class="wateringCans drinkcard-cc noHover cardRadios"
-                            onclick="onRadioImgClick('water', 4)"></label>
+                        <input type="radio" onchange="onRadioImgClick('water')" name="waterAmount" id="input-water-amount-4" aria-label="viel Wasser" value="4">
+                        <label for="input-water-amount-4" id="water-amount-4" class="wateringCans drinkcard-cc noHover cardRadios"></label>
 
-                        <input type="radio" name="waterAmount" id="input-water-amount-5" aria-label="sehr viel Wasser" value="5">
-                        <label for="input-water-amount-5" id="water-amount-5"
-                            class="wateringCans drinkcard-cc noHover cardRadios"
-                            onclick="onRadioImgClick('water', 5)"></label>
+                        <input type="radio" onchange="onRadioImgClick('water')" name="waterAmount" id="input-water-amount-5" aria-label="sehr viel Wasser" value="5">
+                        <label for="input-water-amount-5" id="water-amount-5" class="wateringCans drinkcard-cc noHover cardRadios"></label>
                     </div>
                 </li>
                 <li class="amountRadios">Licht:<br>
                     <div class="radios">
-                        <input type="radio" name="lightAmount" id="input-light-amount-1" aria-label="sehr wenig Licht" value="1">
-                        <label for="input-light-amount-1" id="light-amount-1"
-                            class="suns drinkcard-cc light-amount-1 noHover cardRadios"
-                            onclick="onRadioImgClick('light', 1)"></label>
+                        <input type="radio" onchange="onRadioImgClick('light')" name="lightAmount" id="input-light-amount-1" aria-label="sehr wenig Licht" value="1">
+                        <label for="input-light-amount-1" id="light-amount-1" class="suns drinkcard-cc noHover cardRadios"></label>
 
-                        <input type="radio" name="lightAmount" id="input-light-amount-2"aria-label="wenig Licht" value="2">
-                        <label for="input-light-amount-2" id="light-amount-2"
-                            class="suns drinkcard-cc light-amount-2 noHover cardRadios"
-                            onclick="onRadioImgClick('light', 2)"></label>
+                        <input type="radio" onchange="onRadioImgClick('light')" name="lightAmount" id="input-light-amount-2"aria-label="wenig Licht" value="2">
+                        <label for="input-light-amount-2" id="light-amount-2" class="suns drinkcard-cc noHover cardRadios"></label>
 
-                        <input type="radio" name="lightAmount" id="input-light-amount-3" aria-label="mittel viel Licht" value="3">
-                        <label for="input-light-amount-3" id="light-amount-3"
-                            class="suns drinkcard-cc light-amount-3 noHover cardRadios"
-                            onclick="onRadioImgClick('light', 3)"></label>
+                        <input checked="" type="radio" onchange="onRadioImgClick('light')" name="lightAmount" id="input-light-amount-3" aria-label="mittel viel Licht" value="3">
+                        <label for="input-light-amount-3" id="light-amount-3" class="suns drinkcard-cc noHover cardRadios"></label>
 
-                        <input type="radio" name="waterAmount" id="input-light-amount-4" aria-label="viel Licht" value="4">
-                        <label for="input-light-amount-4" id="light-amount-4"
-                            class="suns drinkcard-cc light-amount-4 noHover cardRadios"
-                            onclick="onRadioImgClick('light', 4)"></label>
+                        <input type="radio" onchange="onRadioImgClick('light')" name="lightAmount" id="input-light-amount-4" aria-label="viel Licht" value="4">
+                        <label for="input-light-amount-4" id="light-amount-4" class="suns drinkcard-cc noHover cardRadios"></label>
 
-                        <input type="radio" name="lightAmount" id="input-light-amount-5" aria-label="sehr viel Licht" value="5">
-                        <label for="input-light-amount-5" id="light-amount-5"
-                            class="suns drinkcard-cc light-amount-5 noHover cardRadios"
-                            onclick="onRadioImgClick('light', 5)"></label>
+                        <input type="radio"  onchange="onRadioImgClick('light')" name="lightAmount" id="input-light-amount-5" aria-label="sehr viel Licht" value="5">
+                        <label for="input-light-amount-5" id="light-amount-5" class="suns drinkcard-cc noHover cardRadios"></label>
                     </div>
                 </li>
             </ul>
@@ -108,43 +89,38 @@
             <ul class="cc-selector">
                 <li class="amountRadios">Wasser:<br>
                     <div class="radios">
-                        <input type="radio" id="form-input-water-amount-1" name="formWaterAmount" aria-label="sehr wenig Wasser" value="1">
-                        <label for="form-input-water-amount-1" id="formWater-amount-1" class="wateringCans drinkcard-cc" onclick="setRadioAmount('formWater', 1)"></label>
+                        <input type="radio" onchange="setRadioAmount('formWater')" id="form-input-water-amount-1" name="formWaterAmount" aria-label="sehr wenig Wasser" value="1">
+                        <label for="form-input-water-amount-1" id="formWater-amount-1" class="wateringCans drinkcard-cc"></label>
 
-                        <input type="radio" id="form-input-water-amount-2" name="formWaterAmount" aria-label="wenig Wasser" value="2">
-                        <label for="form-input-water-amount-2" id="formWater-amount-2" class="wateringCans drinkcard-cc" onclick="setRadioAmount('formWater', 2)"></label>
+                        <input type="radio" onchange="setRadioAmount('formWater')" id="form-input-water-amount-2" name="formWaterAmount" aria-label="wenig Wasser" value="2">
+                        <label for="form-input-water-amount-2" id="formWater-amount-2" class="wateringCans drinkcard-cc"></label>
 
-                        <input type="radio" id="form-input-water-amount-3" name="formWaterAmount" aria-label="mittel viel Wasser" value="3" checked>
-                        <label for="form-input-water-amount-3" id="formWater-amount-3" class="wateringCans drinkcard-cc" onclick="setRadioAmount('formWater', 3)"></label>
+                        <input type="radio" onchange="setRadioAmount('formWater')" id="form-input-water-amount-3" name="formWaterAmount" aria-label="mittel viel Wasser" value="3" checked>
+                        <label for="form-input-water-amount-3" id="formWater-amount-3" class="wateringCans drinkcard-cc"></label>
 
-                        <input checked type="radio" id="form-input-water-amount-4" name="formWaterAmount" aria-label="viel Wasser" value="4">
-                        <label for="form-input-water-amount-4" id="formWater-amount-4" class="wateringCans drinkcard-cc" onclick="setRadioAmount('formWater', 4)"></label>
+                        <input checked type="radio" onchange="setRadioAmount('formWater')" id="form-input-water-amount-4" name="formWaterAmount" aria-label="viel Wasser" value="4">
+                        <label for="form-input-water-amount-4" id="formWater-amount-4" class="wateringCans drinkcard-cc"></label>
 
-                        <input type="radio" id="form-input-water-amount-5" name="formWaterAmount" aria-label="sehr viel Wasser" value="5">
-                        <label for="form-input-water-amount-5" id="formWater-amount-5" class="wateringCans drinkcard-cc" onclick="setRadioAmount('formWater', 5)"></label>
+                        <input type="radio" onchange="setRadioAmount('formWater')" id="form-input-water-amount-5" name="formWaterAmount" aria-label="sehr viel Wasser" value="5">
+                        <label for="form-input-water-amount-5" id="formWater-amount-5" class="wateringCans drinkcard-cc"></label>
                     </div>
                 </li>
                 <li class="amountRadios">Licht:<br>
                     <div class="radios">
-                        <input type="radio" id="form-input-light-amount-1" name="formLightAmount" aria-label="sehr wenig Licht" value="1">
-                        <label for="form-input-light-amount-1" id="formLight-amount-1" class="suns drinkcard-cc"
-                            onclick="setRadioAmount('formLight', 1)"></label>
+                        <input type="radio" onchange="setRadioAmount('formLight')" id="form-input-light-amount-1" name="formLightAmount" aria-label="sehr wenig Licht" value="1">
+                        <label for="form-input-light-amount-1" id="formLight-amount-1" class="suns drinkcard-cc"></label>
 
-                        <input type="radio" id="form-input-light-amount-2" name="formLightAmount" aria-label="wenig Licht" value="2">
-                        <label for="form-input-light-amount-2" id="formLight-amount-2" class="suns drinkcard-cc"
-                            onclick="setRadioAmount('formLight', 2)"></label>
+                        <input type="radio" onchange="setRadioAmount('formLight')" id="form-input-light-amount-2" name="formLightAmount" aria-label="wenig Licht" value="2">
+                        <label for="form-input-light-amount-2" id="formLight-amount-2" class="suns drinkcard-cc"></label>
 
-                        <input type="radio" id="form-input-light-amount-3" name="formLightAmount" aria-label="mittel viel Licht" value="3" checked>
-                        <label for="form-input-light-amount-3" id="formLight-amount-3" class="suns drinkcard-cc"
-                            onclick="setRadioAmount('formLight', 3)"></label>
+                        <input type="radio" onchange="setRadioAmount('formLight')" id="form-input-light-amount-3" name="formLightAmount" aria-label="mittel viel Licht" value="3" checked>
+                        <label for="form-input-light-amount-3" id="formLight-amount-3" class="suns drinkcard-cc"></label>
 
-                        <input type="radio" id="form-input-light-amount-4" name="formLightAmount" aria-label="viel Licht" value="4">
-                        <label for="form-input-light-amount-4" id="formLight-amount-4" class="suns drinkcard-cc"
-                            onclick="setRadioAmount('formLight', 4)"></label>
+                        <input type="radio" onchange="setRadioAmount('formLight')" id="form-input-light-amount-4" name="formLightAmount" aria-label="viel Licht" value="4">
+                        <label for="form-input-light-amount-4" id="formLight-amount-4" class="suns drinkcard-cc"></label>
 
-                        <input type="radio" id="form-input-light-amount-5" name="formLightAmount" aria-label="sehr viel Licht" value="5">
-                        <label for="form-input-light-amount-5" id="formLight-amount-5" class="suns drinkcard-cc"
-                            onclick="setRadioAmount('formLight', 5)"></label>
+                        <input type="radio" onchange="setRadioAmount('formLight')" id="form-input-light-amount-5" name="formLightAmount" aria-label="sehr viel Licht" value="5">
+                        <label for="form-input-light-amount-5" id="formLight-amount-5" class="suns drinkcard-cc"></label>
                     </div>
                 </li>
             </ul>
