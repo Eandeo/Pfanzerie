@@ -120,15 +120,32 @@ function setRadiosToThree(){
 	document.getElementById("form-input-light-amount-3").checked = true;
 	setRadioAmount('formLight');
 }
-
+//adds a new PlantCard --- currently when "addButton" is clicked --- later with form submit
 function addNewPlantCard(){
 	const card = document.createElement("div");
 	card.classList.add("card");
 	document.body.appendChild(card);
 	
-	/*const plantPic = document.createElement("img);
+	const plantPic = document.createElement("img");
+	plantPic.src = "plants/standardPlant.jpg" //hier später aus Formular laden
 	plantPic.classList.add("cardpics");
-	card.appendChild(plantPic);*/
-	//hier geht's dann weiter...
+	card.appendChild(plantPic);
+
+	const propertyDetails = document.createElement("details");
+	propertyDetails.open = true;
+	propertyDetails.classList.add("")
+	card.appendChild(propertyDetails);
+
+	const summary = document.createElement("summary");
+	const textsummary = document.createTextNode("Zusammenfassung");
+	summary.appendChild(textsummary);
+	card.appendChild(summary);
+	//hier geht's weiter...
+
+
+	
+	
+
+
 }
 
