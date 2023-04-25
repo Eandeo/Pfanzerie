@@ -44,6 +44,7 @@ function changeSettings() {
 function showAddPlantForm(status) {
 	if (status) {
 		document.getElementById("plantForm").classList.remove("plantFormHidden");
+		setRadiosToThree();
 		console.log("Show add form");
 	} else {
 		document.getElementById("plantForm").classList.add("plantFormHidden");
@@ -107,9 +108,11 @@ setRadioAmount('water');
 document.getElementById("input-light-amount-" + plant1["lightAmount"]).checked = true;
 setRadioAmount('light');
 
-//sets the watering cans and suns in the newPlantForm to 3
-document.getElementById("form-input-water-amount-3").checked = true;
-setRadioAmount('formWater');
-document.getElementById("form-input-light-amount-3").checked = true;
-setRadioAmount('formLight');
+//sets the watering cans and suns in the newPlantForm to 3/5
+function setRadiosToThree(){
+	document.getElementById("form-input-water-amount-3").checked = true;
+	setRadioAmount('formWater');
+	document.getElementById("form-input-light-amount-3").checked = true;
+	setRadioAmount('formLight');
+}
 
