@@ -42,13 +42,15 @@ function changeSettings() {
 }
 
 function showAddPlantForm(status) {
-	if (status) {
+	/*if (status) {
 		document.getElementById("plantForm").classList.remove("plantFormHidden");
 		setRadiosToThree();
 		console.log("Show add form");
 	} else {
 		document.getElementById("plantForm").classList.add("plantFormHidden");
-	}
+	}*/
+	
+	addNewPlantCard();
 }
 
 //Submiting the addPlantForm 
@@ -76,14 +78,17 @@ plantForm.addEventListener("submit", (e) => {
 
 	e.target.reset();
 	document.getElementById("plantForm").classList.add("plantFormHidden");
-
-	document.getElementById("name").innerHTML = newPlantdata["name"];
+	
+	addNewPlantCard();
+	
+	//Überschreibt das erste Card "Friedenslilie"
+	/*document.getElementById("name").innerHTML = newPlantdata["name"];
 	document.getElementById("about").innerHTML = newPlantdata["description"];
 	document.getElementById("input-water-amount-" + newPlantdata["waterAmount"]).checked = true;
 	setRadioAmount('water');
 	document.getElementById("input-light-amount-" + newPlantdata["lightAmount"]).checked = true;
 	setRadioAmount('light');
-	//bug---wenn auf bereits gewählten Wert gesetzt wird, wird der neue Wert falsch gesetzt?
+	*/
 
 });
 
@@ -114,5 +119,16 @@ function setRadiosToThree(){
 	setRadioAmount('formWater');
 	document.getElementById("form-input-light-amount-3").checked = true;
 	setRadioAmount('formLight');
+}
+
+function addNewPlantCard(){
+	const card = document.createElement("div");
+	card.classList.add("card");
+	document.body.appendChild(card);
+	
+	/*const plantPic = document.createElement("img);
+	plantPic.classList.add("cardpics");
+	card.appendChild(plantPic);*/
+	//hier geht's dann weiter...
 }
 
