@@ -126,20 +126,18 @@ function addNewPlantCard(){
 	card.classList.add("card");
 	document.body.appendChild(card);
 	
+	const figure = document.createElement("figure");
+	card.appendChild(figure);
+
 	const plantPic = document.createElement("img");
 	plantPic.src = "plants/standardPlant.jpg" //hier später aus Formular laden
 	plantPic.classList.add("cardpics");
-	card.appendChild(plantPic);
+	figure.appendChild(plantPic);
 
-	const propertyDetails = document.createElement("details");
-	propertyDetails.open = true;
-	propertyDetails.classList.add("")
-	card.appendChild(propertyDetails);
-
-	const summary = document.createElement("summary");
-	const textsummary = document.createTextNode("Zusammenfassung");
-	summary.appendChild(textsummary);
-	card.appendChild(summary);
+	const figcaption = document.createElement("figcaption");
+	const textFigcaption = document.createTextNode("neuePflanze"); //hier später aus Formular laden
+	figcaption.appendChild(textFigcaption);
+	figure.appendChild(figcaption);
 	//hier geht's weiter...
 
 
