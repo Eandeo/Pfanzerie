@@ -30,6 +30,7 @@ let settingsIsClicked = false;
 function changeSettings() {
 	if (!settingsIsClicked) {
 		document.getElementById("settings").classList.replace("settingsOn", "settingsClose");
+		
 		settingsIsClicked = true;
 	} else {
 		document.getElementById("settings").classList.replace("settingsClose", "settingsOn");
@@ -126,19 +127,64 @@ function addNewPlantCard(){
 	card.classList.add("card");
 	document.body.appendChild(card);
 	
-	const figure = document.createElement("figure");
-	card.appendChild(figure);
-
+	const cardHeading = document.createElement("div");
+	cardHeading.classList.add("card-heading");
+	card.appendChild(cardHeading);
+	
+	const plantName = document.createElement("h2");
+	const textPlantName = document.createTextNode("neuePflanze"); //hier später aus Formular laden
+	plantName.appendChild(textPlantName);
+	cardHeading.appendChild(plantName);
+	
+	const cardSettings = document.createElement("button");
+	cardSettings.classList.add("settingsOn");
+	cardSettings.setAttribute("onClick", "changeSettings()");
+	cardHeading.appendChild(cardSettings);
+	
+	const smallCard = document.createElement("div");
+	smallCard.classList.add("small-card");
+	card.appendChild(smallCard);
+	
 	const plantPic = document.createElement("img");
 	plantPic.src = "plants/standardPlant.jpg" //hier später aus Formular laden
 	plantPic.classList.add("cardpics");
-	figure.appendChild(plantPic);
+	smallCard.appendChild(plantPic);
+	
+	const waterSunList = document.createElement("ul");
+	waterSunList.classList.add("cc-selector");
+	waterSunList.classList.add("main-plant-propertys");
+	smallCard.appendChild(waterSunList);
+	
+	const amountRadios = document.createElement("li");
+	amountRadios.classList.add("amount-radios");
+	waterSunList.appendChild(amountRadios);
+	
+	const radioDiv = document.createElement("div");
+	radioDiv.classList.add("radios");
+	amountRadios.appendChild(radioDiv);
+	
+	const radio = document.createElement("input");
+	radio.type ="radio";
+	radio.setAttribute("onChange","onRadioImgClick('water')")
+	radio.name = "waterAmount";
+	radio.id = "input-water-amount-1-append"
+	radio.setAttribute("aria-label","sehr wenig Wasser");
+	radio.value = 1;
+	radioDiv.appendChild(radio);
+	
+	const radioLabel = document.createElement("label");
+	radioLabel.id="water-amount-1-append"
+	radioLabel.setAttribute("for", "input-water-amount-1-append");
+	radioLabel.classList.add("wateringCans", "drinkcard-cc", "noHover", "cardRadios");
+	radioDiv.appendChild(radioLabel);
+	
+	
+	
+	
+	
+	
 
-	const figcaption = document.createElement("figcaption");
-	const textFigcaption = document.createTextNode("neuePflanze"); //hier später aus Formular laden
-	figcaption.appendChild(textFigcaption);
-	figure.appendChild(figcaption);
-	//hier geht's weiter...
+	
 
 
 	

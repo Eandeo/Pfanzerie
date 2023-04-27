@@ -29,26 +29,47 @@ html {
     background-color: beige;
     padding: 1rem;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	margin-bottom: 0.5rem;
 
 }
+
+.card-heading{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.small-card{
+	display:flex;
+	height: 9rem;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.main-plant-propertys{
+
+}
+
 
 .cardpics {
-    width: 100%;
-    height: 16rem;
-    object-fit: cover;
-    border-radius: 1rem;
-    margin: auto;
-    display: block;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 4rem;
+	margin: auto 0;
+ 
 }
 
-figcaption {
+h2 {
+	margin: 0;
+	
     font-size: x-large;
-    margin: 0.5rem;
+	font-weight: 440;
 }
 
 details{
     margin: auto;
     text-align: center;
+	style-type: n
 }
 
 
@@ -70,8 +91,6 @@ ul{
 
 
 #settings{
-    float: right;
-    float: clear;
     background-color: transparent;
     background-size: cover;
     height: 1.8rem;
@@ -99,7 +118,7 @@ ul{
 .about{
     text-align: justify;
 }
-.amountRadios{
+.amount-radios{
     text-align: left;
 
 }
