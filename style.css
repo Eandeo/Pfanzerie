@@ -133,18 +133,14 @@ ul{
     /*border: 1px solid black;*/
     border-radius:  1.5rem;
     height: 1.5rem;
-    position: absolute;
+    position: fixed;
     bottom: 3rem; right: 2rem;
     vertical-align: middle;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: white;  
     cursor: pointer;
+    z-index: 1;
 }
-
-#addPlantButton:hover {
-    background-color: rgba(221, 221, 221, 0.459);
-}
-
 
 .material-icons{
     vertical-align: middle;
