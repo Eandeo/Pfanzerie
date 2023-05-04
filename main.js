@@ -30,7 +30,7 @@ let settingsIsClicked = false;
 function changeSettings() {
 	if (!settingsIsClicked) {
 		document.getElementById("settings").classList.replace("settingsOn", "settingsClose");
-		
+
 		settingsIsClicked = true;
 	} else {
 		document.getElementById("settings").classList.replace("settingsClose", "settingsOn");
@@ -50,7 +50,7 @@ function showAddPlantForm(status) {
 	} else {
 		document.getElementById("plantForm").classList.add("plantFormHidden");
 	}*/
-	
+
 	addNewPlantCard();
 }
 
@@ -64,14 +64,14 @@ plantForm.addEventListener("submit", (e) => {
 	const plantRoom = document.getElementById("plant-room").value;
 	const plantWater = document.querySelector('input[name="formWaterAmount"]:checked').value;
 	const plantLight = document.querySelector('input[name="formLightAmount"]:checked').value;
-	const plantDescription = document.getElementById("form-plant-description").value;
+	const plantsummary = document.getElementById("form-plant-summary").value;
 
 	const newPlantdata = {
 		"name": plantName,
 		"room": plantRoom,
 		"waterAmount": plantWater,
 		"lightAmount": plantLight,
-		"description": plantDescription
+		"summary": plantsummary
 	};
 
 	const newPlantJson = JSON.stringify(newPlantdata);
@@ -79,12 +79,12 @@ plantForm.addEventListener("submit", (e) => {
 
 	e.target.reset();
 	document.getElementById("plantForm").classList.add("plantFormHidden");
-	
+
 	addNewPlantCard();
-	
+
 	//Überschreibt das erste Card "Friedenslilie"
 	/*document.getElementById("name").innerHTML = newPlantdata["name"];
-	document.getElementById("about").innerHTML = newPlantdata["description"];
+	document.getElementById("about").innerHTML = newPlantdata["summary"];
 	document.getElementById("input-water-amount-" + newPlantdata["waterAmount"]).checked = true;
 	setRadioAmount('water');
 	document.getElementById("input-light-amount-" + newPlantdata["lightAmount"]).checked = true;
@@ -103,11 +103,22 @@ const plant1 = {
 	img: "plants/einblatt.jpg",
 	waterAmount: 5,
 	lightAmount: 4,
-	description: "Das Einblatt ist wegen ihrer kleinen weißen Blüten sehr beliebt. Dieser Pflanze wird in Deutschland auch Scheidenblatt, Friedenslilie, Blattfahne oder Spathiphyllum genannt. Die Spathiphyllum kommt ursprünglich aus Brasilien. Die Pflanzenfamilie ist Araceae."
+	summary: "Das Einblatt ist wegen ihrer kleinen weißen Blüten sehr beliebt. Dieser Pflanze wird in Deutschland auch Scheidenblatt, Friedenslilie, Blattfahne oder Spathiphyllum genannt. Die Spathiphyllum kommt ursprünglich aus Brasilien. Die Pflanzenfamilie ist Araceae."
+}
+
+const plantX = {
+	id: 2,
+	name: "neuePflanze",
+	room: "Zimmer",
+	img: "plants/standardPlant.jpg",
+	waterAmount: 3,
+	lightAmount: 3,
+	summary: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+
 }
 //loads data for 1st plant
 document.getElementById("name").innerHTML = plant1["name"];
-document.getElementById("about").innerHTML = plant1["description"];
+document.getElementById("about").innerHTML = plant1["summary"];
 document.getElementById("plantPic").src = "plants/einblatt.jpg";
 document.getElementById("input-water-amount-" + plant1["waterAmount"]).checked = true;
 setRadioAmount('water');
@@ -115,92 +126,110 @@ document.getElementById("input-light-amount-" + plant1["lightAmount"]).checked =
 setRadioAmount('light');
 
 //sets the watering cans and suns in the newPlantForm to 3/5
-function setRadiosToThree(){
+function setRadiosToThree() {
 	document.getElementById("form-input-water-amount-3").checked = true;
 	setRadioAmount('formWater');
 	document.getElementById("form-input-light-amount-3").checked = true;
 	setRadioAmount('formLight');
 }
+
 //adds a new PlantCard --- currently when "addButton" is clicked --- later with form submit
-function addNewPlantCard(){
+function addNewPlantCard() {
 	const card = document.createElement("div");
 	card.classList.add("card");
 	document.body.appendChild(card);
-	
+
 	const cardHeading = document.createElement("div");
 	cardHeading.classList.add("card-heading");
 	card.appendChild(cardHeading);
-	
+
 	const plantName = document.createElement("h2");
-	const textPlantName = document.createTextNode("neuePflanze"); //hier später aus Formular laden
+	const textPlantName = document.createTextNode(plantX.name); //hier später aus Formular laden
 	plantName.appendChild(textPlantName);
 	cardHeading.appendChild(plantName);
-	
+
 	const cardSettings = document.createElement("button");
 	cardSettings.classList.add("settingsOn");
 	cardSettings.setAttribute("onClick", "changeSettings()");
 	cardHeading.appendChild(cardSettings);
-	
+
 	const smallCard = document.createElement("div");
 	smallCard.classList.add("small-card");
 	card.appendChild(smallCard);
-	
+
 	const plantPic = document.createElement("img");
-	plantPic.src = "plants/standardPlant.jpg" //hier später aus Formular laden
+	plantPic.src = plantX.img; //hier später aus Formular laden
 	plantPic.classList.add("cardpics");
 	smallCard.appendChild(plantPic);
-	
+
 	const waterSunList = document.createElement("ul");
 	waterSunList.classList.add("cc-selector");
 	waterSunList.classList.add("main-plant-propertys");
 	smallCard.appendChild(waterSunList);
-	
-	const amountRadios = document.createElement("li");
-	amountRadios.classList.add("amount-radios");
-	waterSunList.appendChild(amountRadios);
-	
-	const radioDiv = document.createElement("div");
-	radioDiv.classList.add("radios");
-	amountRadios.appendChild(radioDiv);
-	
-	for(let i = 1; i<=5; i++){
-	const radio = document.createElement("input");
-	radio.type ="radio";
-	radio.setAttribute("onChange","onRadioImgClick('water')")
-	radio.name = "waterAmount";
-	radio.id = "input-water-amount-"+i+"-append"
-	let aria_label;
-	switch(i){
-		case "1": aria_label = "sehr wenig Wasser";
-		case "2": aria_label = "wenig Wasser";
-		case "3": aria_label = "mittel viel Wasser";
-		case "4": aria_label = "viel Wasser";
-		case "5": aria_label = "sehr viel Wasser";
-		break;
+
+	addWaterLightRadios("water");
+	addWaterLightRadios("light");
+
+	const details = document.createElement("details");
+	card.appendChild(details);
+
+	const summary = document.createElement("summary");
+	const summaryText = document.createTextNode("Beschreibung");
+	summary.appendChild(summaryText);
+	details.appendChild(summary);
+
+	const description = document.createElement("p");
+	const descriptionText = document.createTextNode(plantX.summary);
+	description.id = "about";
+	description.classList.add("about");
+	description.appendChild(descriptionText);
+	details.appendChild(description);
+
+
+	//adds the radios with either wateringCans or Sun Symbols --- allowed types: "water" or "light"
+	function addWaterLightRadios(type) {
+		const amountRadios = document.createElement("li");
+		amountRadios.classList.add("amount-radios");
+		waterSunList.appendChild(amountRadios);
+
+		const radioDiv = document.createElement("div");
+		radioDiv.classList.add("radios");
+		amountRadios.appendChild(radioDiv);
+		for (let i = 1; i <= 5; i++) {
+			const radio = document.createElement("input");
+			radio.type = "radio";
+			radio.setAttribute("onChange", "onRadioImgClick('" + type + "')")
+			radio.name = type + "Amount";
+			radio.id = "input-" + type + "-amount-" + i + "-append"
+			let aria_label;
+			switch (i) {
+				case "1": aria_label = "sehr wenig" + type;
+				case "2": aria_label = "wenig" + type;
+				case "3": aria_label = "mittel viel" + type;
+				case "4": aria_label = "viel " + type;
+				case "5": aria_label = "sehr viel " + type;
+					break;
+			}
+			radio.setAttribute("aria-label", aria_label);
+			radio.value = i;
+			radioDiv.appendChild(radio);
+
+			const radioLabel = document.createElement("label");
+			radioLabel.id = type + "-amount-" + i + "-append"
+			radioLabel.setAttribute("for", "input-" + type + "-amount-" + i + "-append");
+
+			let getClassName = "";
+			if (type === "water") {
+				getClassName = "wateringCans";
+			} else if (type === "light") {
+				getClassName = "suns";
+			}
+
+			radioLabel.classList.add(getClassName, "drinkcard-cc", "noHover", "cardRadios");
+			radioDiv.appendChild(radioLabel);
+		}
+		
 	}
-	radio.setAttribute("aria-label",aria_label);
-	radio.value = i;
-	radioDiv.appendChild(radio);
-	
-	const radioLabel = document.createElement("label");
-	radioLabel.id="water-amount-"+i+"-append"
-	radioLabel.setAttribute("for", "input-water-amount-"+i+"-append");
-	radioLabel.classList.add("wateringCans", "drinkcard-cc", "noHover", "cardRadios");
-	radioDiv.appendChild(radioLabel);
-	}
-	
-	
-	
-	
-	
-	
-
-	
-
-
-	
-	
-
 
 }
 
