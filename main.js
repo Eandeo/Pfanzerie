@@ -188,7 +188,18 @@ function addNewPlantCard() {
 
 	//adds the radios with either wateringCans or Sun Symbols --- allowed types: "water" or "light"
 	function addWaterLightRadios(type) {
+		let typeDeutsch = "";
+		switch(type){
+			case "water": typeDeutsch = "Wasser";
+				break;
+			case "light": typeDeutsch = "Licht";
+				break;
+			default: typeDeutsch = type;
+		}
+
 		const amountRadios = document.createElement("li");
+		const radioHeading = document.createTextNode(typeDeutsch + ":");
+		amountRadios.appendChild(radioHeading);
 		amountRadios.classList.add("amount-radios");
 		waterSunList.appendChild(amountRadios);
 
@@ -204,9 +215,13 @@ function addNewPlantCard() {
 			let aria_label;
 			switch (i) {
 				case "1": aria_label = "sehr wenig" + type;
+					break;
 				case "2": aria_label = "wenig" + type;
+					break;
 				case "3": aria_label = "mittel viel" + type;
+					break;
 				case "4": aria_label = "viel " + type;
+					break;
 				case "5": aria_label = "sehr viel " + type;
 					break;
 			}
@@ -232,4 +247,3 @@ function addNewPlantCard() {
 	}
 
 }
-
